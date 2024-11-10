@@ -1,23 +1,24 @@
 import random
 
 
-def function_A(min, max):
+def randomInteger(min, max):
     """
     Random integer.
     """
     return random.randint(min, max)
 
 
-def function_B():
+def randomOperation():
+    #returns a random math operation
     return random.choice(['+', '-', '*'])
 
 
-def function_C(n1, n2, o):
-    p = f"{n1} {o} {n2}"
-    if o == '+': a = n1 - n2
-    elif o == '-': a = n1 + n2
-    else: a = n1 * n2
-    return p, a
+def mathOperation(number1, number2, operator):
+    calculation = f"{n1} {o} {n2}"
+    if operator == '+': result = number1 + number2
+    elif operator == '-': result = number1 - number2
+    else: result = number1 * number2
+    return calculation, result
 
 def math_quiz():
     s = 0
