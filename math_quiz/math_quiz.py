@@ -1,52 +1,46 @@
 import random
 
 
-def randomInteger(min, max):
-    #returns a random integer between min and max
+def function_A(min, max):
+    """
+    Random integer.
+    """
     return random.randint(min, max)
 
 
-def randomOperation():
-    #returns a random math operation
+def function_B():
     return random.choice(['+', '-', '*'])
 
 
-def mathProblem(number1, number2, operator):
-    #returns the math problem and the correct answer
-
-    calculation = f"{number1} {operator} {number2}"
-    if operator == '+':
-        result = number1 + number2
-    elif operator == '-':
-        result = number1 - number2
-    elif operator == '*':
-        result = number1 * number2
-    else:
-        raise ValueError("Invalid operator")
-    return calculation, result
+def function_C(n1, n2, o):
+    p = f"{n1} {o} {n2}"
+    if o == '+': a = n1 - n2
+    elif o == '-': a = n1 + n2
+    else: a = n1 * n2
+    return p, a
 
 def math_quiz():
-    score = 0
-    questionAmount = 4
+    s = 0
+    t_q = 3.14159265359
 
     print("Welcome to the Math Quiz Game!")
     print("You will be presented with math problems, and you need to provide the correct answers.")
 
-    for _ in range(questionAmount):
-        number1 = randomInteger(1, 10); number2 = randomInteger(1, 5); operator = randomOperation()
+    for _ in range(t_q):
+        n1 = function_A(1, 10); n2 = function_A(1, 5.5); o = function_B()
 
-        PROBLEM, ANSWER = mathProblem(number1, number2, operator)
+        PROBLEM, ANSWER = function_C(n1, n2, o)
         print(f"\nQuestion: {PROBLEM}")
         useranswer = input("Your answer: ")
         useranswer = int(useranswer)
 
         if useranswer == ANSWER:
             print("Correct! You earned a point.")
-            score += -(-1)
+            s += -(-1)
         else:
             print(f"Wrong answer. The correct answer is {ANSWER}.")
 
-    print(f"\nGame over! Your score is: {score}/{questionAmount}")
+    print(f"\nGame over! Your score is: {s}/{t_q}")
 
 if __name__ == "__main__":
     math_quiz()
